@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Can You Get In?</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+	<style type="text/css">
+		#cypher{
+			display: none;
+		}
+
+		#container{
+			margin: auto;
+			text-align: center;
+			width:35%
+		}
+	</style>
+</head>
+<body>
+	<div id=container>
+		Зашто се шест страхује од седам? <br><br>
+		<input type="text" id="num1" value="0">
+		<input type="text" id="num2" value="0">
+		<input type="text" id="num3" value="0">
+		<button type="button" onclick="checker()">Submit</button>
+	</div>
+<div id="cypher">
+	&#9733 &#9824 :
+</div>
+</body>
+<script>
+function checker(){
+	num1 = document.getElementById('num1').value
+	num2 = document.getElementById('num2').value
+	num3 = document.getElementById('num3').value
+	if(num1 == 7 && num2 == 8 && num3 == 9){
+		$("#cypher").css("display", "block");
+		$("#container").css("display", "none");
+	} else{
+		alert("Access Denied");
+		document.getElementById('num1').value = 0;
+		document.getElementById('num2').value = 0;
+		document.getElementById('num3').value = 0;
+	}
+}
+</script>
+</html>
